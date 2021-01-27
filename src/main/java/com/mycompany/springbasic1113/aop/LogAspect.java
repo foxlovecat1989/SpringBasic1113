@@ -10,9 +10,10 @@ import org.springframework.stereotype.Component;
 @Order(1) // 數字越小越先被執行
 public class LogAspect {
     
-    // 前置通知
+    // 前置通知(Advice)
     // 切入點表達式
-    @Before(value = "execution(public int com.mycompany.springbasic1113.aop.CalcImpl.add(int, int))")
+    // @Before(value = "execution(public int com.mycompany.springbasic1113.aop.CalcImpl.add(int, int))")
+    @Before(value = "execution(public int com.mycompany.springbasic1113.aop.CalcImpl.*(int, int))") // 切入點表達式
     public void before(){
         System.out.println("前置通知:");
     }

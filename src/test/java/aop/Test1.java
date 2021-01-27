@@ -11,6 +11,9 @@ public class Test1 {
                 new ClassPathXmlApplicationContext("aop-config.xml");
         Calc calc = ctx.getBean("calcImpl", Calc.class);
         System.out.println(calc.add(2, 3));
+        System.out.println(calc.sub(2, 3));
+        System.out.println(calc.mul(2, 3));
+        System.out.println(calc.div(3, 3));
         ctx.close();
     }
 }
