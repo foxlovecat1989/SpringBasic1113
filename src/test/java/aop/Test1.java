@@ -13,7 +13,11 @@ public class Test1 {
         // System.out.println(calc.add(2, 3));
         // System.out.println(calc.sub(2, 3));
         // System.out.println(calc.mul(2, 3));
-        System.out.println(calc.div(4, 2));
+        try{
+            System.out.println(calc.div(4, 0));
+        }catch(Exception ex){
+            
+        }
         ctx.close();
     }
 }

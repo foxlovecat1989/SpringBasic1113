@@ -4,6 +4,8 @@ import java.util.Arrays;
 import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -40,5 +42,18 @@ public class LogAspect {
     @After(value = "cut()") // 切入點參照
     public void after() {
         System.out.println("後置通知:");
+    }
+    
+    // 返回通知(Advice)
+    // 獲取返回值
+    @AfterReturning(value = "cut()", returning = "result")
+    public void afterReturning(Object result) {
+        System.out.printf("返回通知: result= %s\n", result);
+    }
+    
+    // 例外通知(Advice)
+    @AfterThrowing(value = "cut()", throwing = "ex")
+    public void afterThrowing(Exception ex) {
+        System.out.printf("例外通知(Advice): ex= %s\n", ex);
     }
 }
