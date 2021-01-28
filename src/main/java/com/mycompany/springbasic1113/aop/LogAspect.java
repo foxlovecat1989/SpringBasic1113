@@ -1,7 +1,6 @@
 package com.mycompany.springbasic1113.aop;
 
 import java.util.Arrays;
-import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
